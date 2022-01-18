@@ -1,0 +1,1 @@
+A main.py előtt a "fileletrehozas.py" file kell elindítani.

@@ -37,6 +37,8 @@ for t in range(tantargyszam):
     tantargy = input()
     tantargyak.append(tantargy)
 
+print("A következő tantárgy átváltásához nyomjon: 0")
+
 #Kiírjuk a dátumot .txt-be. 
 ido = asctime(localtime(time()))
 with open("atlag.txt", "a", encoding="utf8()") as file:
@@ -99,9 +101,7 @@ for i in range(tantargyszam):
         file.write("\n")
         file.writelines(sorok)
         file.write("")
-
-
-        
+            
     #Lenullázzuk a változókat.
     atlag = "a"
     jeles = 0
