@@ -20,7 +20,7 @@ teljesatlag = 0
 szoveg = ""
 tszoveg = []
 sor = "\n"
-sor1 = ""   #leon fel
+sor1 = ""   
 sor2 = ""
 sor3 = ""
 sor4 = ""
@@ -80,10 +80,10 @@ for a in range(tantargyszam):
     sor5 = f"Jó-k száma: {jodb} db"
     print("Közepesek száma: ", kozepesdb, "db")
     sor6 = f"Közepesek száma: {kozepesdb} db"
-    print("Elégseges száma: ", elegsegesdb, "db")
-    sor7 = f"Elégseges száma: {elegsegesdb} db"
-    print("Elégtelen száma: ", elegtelen, "db")
-    sor8 = f"Elégtelen száma: {elegtelen}"
+    print("Elégségesek száma: ", elegsegesdb, "db")
+    sor7 = f"Elégségesek száma: {elegsegesdb} db"
+    print("Elégtelenek száma: ", elegtelen, "db")
+    sor8 = f"Elégtelenek száma: {elegtelen}"
     print("----------------------------------------------") #ez sor2
     print("Jegyeid száma: ", db)
     sor9 = f"Jegyeid száma: {db}"
@@ -99,7 +99,7 @@ for a in range(tantargyszam):
         file.write("")
 
         
-    #valtozo reset
+    #változó reset
     atlag = "a"
     jeles = 0
     jo = 0

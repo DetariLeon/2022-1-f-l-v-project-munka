@@ -18,29 +18,31 @@ tantargyszam = 0
 atlagok = []
 teljesatlag = 0
 szoveg = ""
-tszoveg = []
-sor = "\n"
 sorok = []
 lefut = False
 
 print("Átlagszámító program\nKészítette: Ábrahám Dávid és Détári Leon")
 
+#Szám kérése.
+
 while lefut == False:
     try:
-        tantargyszam = int(input("Hány tantárgy átlagát szeretnéd kiszámítani? "))
+        tantargyszam = int(input("Hány tantárgy átlagát szeretné kiszámítani? "))
         lefut = True
     except:
-        print("nem jo :(") #LEON
-
+        print("Számot írjon!") 
+        
 for t in range(tantargyszam):
     print("Írja be a(z) ", t + 1, ". tantárgy nevét!") 
     tantargy = input()
     tantargyak.append(tantargy)
 
-
+#Kiírjuk a dátumot .txt-be. 
 ido = asctime(localtime(time()))
 with open("atlag.txt", "a", encoding="utf8()") as file:
     file.write(str(ido))
+    file.write("\n")
+
 
 for i in range(tantargyszam):
     sorok = []
@@ -49,7 +51,7 @@ for i in range(tantargyszam):
         if atlag == 0:
             break
         else:
-            atlag = int(input("Írd egymás után a jegyeidet: "))
+            atlag = int(input("Írja egymás után a jegyeit: "))
             if atlag == 1:
                 elegtelen = elegtelen + 1
                 elegtelendb = elegtelendb + 1
@@ -66,7 +68,7 @@ for i in range(tantargyszam):
                 jeles = jeles + 5
                 jelesdb = jelesdb + 1
             else:
-                print("A szém legyen 1 és öt kozott") #leon
+                print("A szám legyen 1 és 5 között") #Ezt akkor irja ki ha a felhasználó nem 1 és 5 között irja a számokat.
             db = db + 1 
     db = db - 1
     print()
@@ -85,22 +87,22 @@ for i in range(tantargyszam):
     sorok.append(f"Elégsegesek száma: {elegsegesdb} db\n")
     print("Elégtelenek száma: ", elegtelen, "db") 
     sorok.append(f"Elégtelenek száma: {elegtelen}\n")
-    print("----------------------------------------------") #ez sor2
-    print("Jegyeid száma: ", db)
-    sorok.append(f"Jegyeid száma: {db}\n")
+    print("----------------------------------------------") 
+    print("Jegyei száma: ", db)
+    sorok.append(f"Jegyei száma: {db}\n")
     atlag = (jeles + jo + kozepes + elegseges + elegtelen) / db
     atlagok.append(atlag)
-    print("Az átlagod: ", atlag, "\n")
-    sorok.append(f"Az átlagod: {atlag} \n\n")
+    print("Az átlaga: ", atlag, "\n")
+    sorok.append(f"Az átlaga: {atlag} \n\n")
 
-    with open("atlag.txt", "a", encoding="utf8()") as file:
+    with open("atlag.txt", "a", encoding="utf8()") as file:     #Elmentjük a .txt fájlba az adatokat.
         file.write("\n")
         file.writelines(sorok)
         file.write("")
 
 
         
-    #valtozo reset
+    #Lenullázzuk a változókat.
     atlag = "a"
     jeles = 0
     jo = 0
@@ -115,16 +117,16 @@ for i in range(tantargyszam):
     db = 0
     atlag = ()
 
+#Kiszámoljuk az eddigi tantárgyak összesített átlagát.
 for b in range(len(atlagok)):
     teljesatlag = teljesatlag + atlagok[b]
 teljesatlag = teljesatlag / len(atlagok)
 
 with open("atlag.txt", "a", encoding="utf8()") as file:
-    sor1 = f"Az összes tantárgyad teljes átlaga: {teljesatlag}"
+    sor1 = f"Az összes tantárgy teljes átlaga: {teljesatlag}"
     szoveg = str(sor1)
     file.write(szoveg)
-    file.write("----------------------------------------------")
+    file.write("\n----------------------------------------------\n")
 
-print("Az összes tantárgyad teljes átlaga: ", teljesatlag)  
-print("Az összes eredményt mentsük egy .txt-be")  
+print("Az összes tantárgy teljes átlaga: ", teljesatlag)  
 input("A kilépéshez nyomjon egy [ENTER]-t")
