@@ -17,9 +17,21 @@ tantargy = 0
 tantargyszam = 0
 atlagok = []
 teljesatlag = 0
+szoveg = ""
+tszoveg = []
+sor = "\n"
+sor1 = ""   #leon fel
+sor2 = ""
+sor3 = ""
+sor4 = ""
+sor5 = ""
+sor6 = ""
+sor7 = ""
+sor8 = ""
+sor9 = ""
+sor10 = ""
 
-
-print("Átlagszámító program\n Készítette: Ábrahám Dávid és Détári Leon")
+print("Átlagszámító program\nKészítette: Ábrahám Dávid és Détári Leon")
 tantargyszam = int(input("Hány tantárgy átlagát szeretnéd kiszámítani? "))
 
 for t in range(tantargyszam):
@@ -28,7 +40,9 @@ for t in range(tantargyszam):
     tantargyak.append(tantargy)
 
 
-
+ido = asctime(localtime(time()))
+with open("atlag.txt", "a", encoding="utf8()") as file:
+    file.write(str(ido))
 
 for a in range(tantargyszam):
     print("A(z) ", tantargyak[a], " átlaga")
@@ -55,19 +69,36 @@ for a in range(tantargyszam):
             db = db + 1 
     db = db - 1
     print()
+    sor1 = ""
     print("A(z) ", tantargyak[a], " eredménye:")
+    sor2 = f"A(z) {tantargyak[a]} eredménye:"
     print("----------------------------------------------")
+    sor3 = "----------------------------------------------"
     print("Jelesek száma: ", jelesdb, "db")
+    sor4 = f"Jelesek száma: {jelesdb} db"
     print("Jó-k száma: ", jodb, "db")
+    sor5 = f"Jó-k száma: {jodb} db"
     print("Közepesek száma: ", kozepesdb, "db")
+    sor6 = f"Közepesek száma: {kozepesdb} db"
     print("Elégseges száma: ", elegsegesdb, "db")
+    sor7 = f"Elégseges száma: {elegsegesdb} db"
     print("Elégtelen száma: ", elegtelen, "db")
-    print("----------------------------------------------")
+    sor8 = f"Elégtelen száma: {elegtelen}"
+    print("----------------------------------------------") #ez sor2
     print("Jegyeid száma: ", db)
+    sor9 = f"Jegyeid száma: {db}"
     atlag = (jeles + jo + kozepes + elegseges + elegtelen) / db
     atlagok.append(atlag)
     print("Az átlagod: ", atlag, "\n")
+    sor10 = f"Az átlagod: {atlag} \n"
+    szoveg = str(sor1) + sor + str(sor2) + sor + str(sor3) + sor + str(sor4) + sor + str(sor5) + sor + str(sor6) + sor + str(sor7) + sor + str(sor8) + sor + str(sor2) + sor + str(sor9) + sor + str(sor10) + sor
     
+    with open("atlag.txt", "a", encoding="utf8()") as file:
+        file.write("\n")
+        file.write(str(szoveg))
+        file.write("")
+
+        
     #valtozo reset
     atlag = "a"
     jeles = 0
@@ -82,6 +113,16 @@ for a in range(tantargyszam):
     elegtelendb = 0
     db = 0
     atlag = ()
+    sor1 = ""   
+    sor2 = ""
+    sor3 = ""
+    sor4 = ""
+    sor5 = ""
+    sor6 = ""
+    sor7 = ""
+    sor8 = ""
+    sor9 = ""
+    sor10 = ""
 
 
 
@@ -94,7 +135,11 @@ teljesatlag = teljesatlag / len(atlagok)
 
 
 
-
+with open("atlag.txt", "a", encoding="utf8()") as file:
+    sor1 = f"Az összes tantárgyad teljes átlaga: {teljesatlag}"
+    szoveg = str(sor1)
+    file.write(szoveg)
+    file.write("\n")
 
 
 
