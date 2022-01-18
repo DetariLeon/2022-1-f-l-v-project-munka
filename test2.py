@@ -18,13 +18,15 @@ tantargyszam = 0
 atlagok = []
 teljesatlag = 0
 
-print("Átlag kiszámító program\n Készítette: Ábrahám Dávid és Détári Leon")
-tantargyszam = int(input("Hány tantárgy átlagát szeretéd kiszámítani? "))
+
+print("Átlagszámító program\n Készítette: Ábrahám Dávid és Détári Leon")
+tantargyszam = int(input("Hány tantárgy átlagát szeretnéd kiszámítani? "))
 
 for t in range(tantargyszam):
-    print("Írja be az ", t + 1, ". tantárgy nevét!")
+    print("Írja be a(z) ", t + 1, ". tantárgy nevét!")
     tantargy = input()
     tantargyak.append(tantargy)
+
 
 
 
@@ -58,8 +60,8 @@ for a in range(tantargyszam):
     print("Jelesek száma: ", jelesdb, "db")
     print("Jó-k száma: ", jodb, "db")
     print("Közepesek száma: ", kozepesdb, "db")
-    print("Elegseges db: ", elegsegesdb, "db")
-    print("Elegtelen db: ", elegtelen, "db")
+    print("Elégseges száma: ", elegsegesdb, "db")
+    print("Elégtelen száma: ", elegtelen, "db")
     print("----------------------------------------------")
     print("Jegyeid száma: ", db)
     atlag = (jeles + jo + kozepes + elegseges + elegtelen) / db
@@ -81,16 +83,21 @@ for a in range(tantargyszam):
     db = 0
     atlag = ()
 
-print(atlagok)
+
+
+
+
 
 for b in range(len(atlagok)):
     teljesatlag = teljesatlag + atlagok[b]
 teljesatlag = teljesatlag / len(atlagok)
 
-print(teljesatlag) 
 
 
 
 
-print("Az összes tantárgy teljes átlaga: ", teljesatlag)    
-input("A kilépéshez nyomjon [ENTER]")
+
+
+print("Az összes tantárgyad teljes átlaga: ", teljesatlag)  
+print("Az összes eredményt mentsük egy .txt-be")  
+input("A kilépéshez nyomjon egy [ENTER]-t")
