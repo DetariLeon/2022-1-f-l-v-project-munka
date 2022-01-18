@@ -13,10 +13,10 @@ elegsegesdb = 0
 elegtelendb = 0
 db = 0
 tantargyak = []
-tantargy = ()
-tantargyszam = ()
+tantargy = 0
+tantargyszam = 0
 atlagok = []
-teljesatlag = ()
+teljesatlag = 0
 
 print("Átlag kiszámító program\n Készítette: Ábrahám Dávid és Détári Leon")
 tantargyszam = int(input("Hány tantárgy átlagát szeretéd kiszámítani? "))
@@ -81,9 +81,11 @@ for a in range(tantargyszam):
     db = 0
     atlag = ()
 
+print(atlagok)
+
 for b in range(len(atlagok)):
     teljesatlag = teljesatlag + atlagok[b]
-teljesatlag = teljesatlag / b
+teljesatlag = teljesatlag / len(atlagok)
 
 print(teljesatlag) 
 
